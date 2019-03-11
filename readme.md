@@ -10,14 +10,14 @@ The script is ready to use if your attendee form fields have the xact same name.
 
 The script works as a small wordpress plugin. It is written for **The Events Calender** in combination with **woocommerce**.
 
-- WordPress: 'https://wordpress.org/'
-- The Events Calender: 'https://theeventscalendar.com/'
-- WWooCommerce: 'https://woocommerce.com/'
+- WordPress: https://wordpress.org/
+- The Events Calender: https://theeventscalendar.com/
+- WWooCommerce: https://woocommerce.com/
 
 
 ## Installing
 
-You can either directly download the plugin as .zip 'https://github.com/JUVOWebDes/ec-copy-attendee-details/archive/master.zip' or customize the fields names.
+You can either directly download the plugin as .zip https://github.com/JUVOWebDes/ec-copy-attendee-details/archive/master.zip or customize the fields names.
 If it is necessary to make adjustments you should create a copy and edit the code.
 
 1. Copy script
