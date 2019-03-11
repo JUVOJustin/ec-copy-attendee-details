@@ -10,6 +10,10 @@ The script is ready to use if your attendee form fields have the xact same name.
 
 The script works as a small wordpress plugin. It is written for **The Events Calender** in combination with **woocommerce**.
 
+WordPress: 'https://wordpress.org/'
+The Events Calender: 'https://theeventscalendar.com/'
+WooCommerce: 'https://woocommerce.com/'
+
 
 ## Installing
 
