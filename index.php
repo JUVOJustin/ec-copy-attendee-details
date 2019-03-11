@@ -25,7 +25,7 @@ function juvo_woocommerce_attendee_details_copy() {
         <script>
             var data = <?php echo $_SESSION['juvo-woo-ec-attendee-copy'] ?>;
             jQuery(document).ready(function(){
-                
+                WW
                 /**
                  * 
                  * Change field names here
@@ -85,6 +85,7 @@ class AttendeeDetailsCopy {
         $data;
 
         //Iterate through variable, necessary due to array structure -.-
+        $i=0;
         if (!empty($attendeesInformations)) {
             foreach ($attendeesInformations as $attendeesInformation) {
                 //First Inner Elements is the current event
