@@ -8,7 +8,7 @@
 */
 
 add_action( 'woocommerce_before_checkout_form', 'juvo_woocommerce_attendee_details_copy');
- function juvo_woocommerce_attendee_details_copy() {
+function juvo_woocommerce_attendee_details_copy() {
     
     //Needed to access session
     session_start();
@@ -23,7 +23,17 @@ add_action( 'woocommerce_before_checkout_form', 'juvo_woocommerce_attendee_detai
 
         <script>
             var data = <?php echo $_SESSION['juvo-attendee-data'] ?>;
-            jQuery(document).ready(function(){ 
+            jQuery(document).ready(function(){
+                
+                /**
+                 * 
+                 * Change field names here
+                 * jQuery( 'input[name*="woocommerce field name"' ).val(data["field name from attendee details"]);
+                 * 
+                 * To get the attendee details field names uncomment the "console.log(data);" line and use your browser debugging tools
+                 * 
+                 */
+
                 jQuery( 'input[name*="first_name"]' ).val(data["vorname"]);
                 jQuery( 'input[name*="last_name"]' ).val(data["name"]);
                 jQuery( 'input[name*="company"]' ).val(data["firma"]);
@@ -43,7 +53,7 @@ add_action( 'woocommerce_before_checkout_form', 'juvo_woocommerce_attendee_detai
         //Clear buffer
         ob_end_flush();
     }
- }
+}
 
 //Check if Attende Information is submitted
 if (isset($_POST['tribe_tickets_saving_attendees'])) {
