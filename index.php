@@ -10,19 +10,20 @@
 add_action( 'woocommerce_before_checkout_form', 'juvo_woocommerce_attendee_details_copy');
 function juvo_woocommerce_attendee_details_copy() {
     
-    //Needed to access session
+    //Access Session with name
+    session_name('juvo-woo-ec-attendee-copy');
     session_start();
     
     //Check if session variable is available
-    if(isset($_SESSION['juvo-attendee-data'])) {
+    if(isset($_SESSION['juvo-woo-ec-attendee-copy'])) {
 
         //Create html buffer
-        ob_start("callback");
+        ob_start();
 
         ?>
 
         <script>
-            var data = <?php echo $_SESSION['juvo-attendee-data'] ?>;
+            var data = <?php echo $_SESSION['juvo-woo-ec-attendee-copy'] ?>;
             jQuery(document).ready(function(){
                 
                 /**
@@ -59,15 +60,16 @@ function juvo_woocommerce_attendee_details_copy() {
 if (isset($_POST['tribe_tickets_saving_attendees'])) {
     //Create Instance to get attendee details
     $obj = new AttendeeDetailsCopy;
-    //Create Session to store data persistently
-    session_name('juvo-woo-attendee-copy');
+
+    //Create Session with name
+    session_name('juvo-woo-ec-attendee-copy');
     session_start();
 
     //encode data for easy javascript access
     $data = json_encode($obj->data);
 
-    //save data in session
-    $_SESSION['juvo-attendee-data'] = $data;
+    //save data persistent in session
+    $_SESSION['juvo-woo-ec-attendee-copy'] = $data;
 }
 
 class AttendeeDetailsCopy {
